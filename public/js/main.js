@@ -20759,42 +20759,42 @@ process.umask = function() { return 0; };
 var React = require('react');
 var ListItem = require('./ListItem.jsx');
 
-var ingredients = [{ "id": 1, "text": "ham" }, { "id": 2, "text": "chees" }, { "id": 3, "text": "peper" }];
+var ingredients = [{ "id": 1, "text": "ham" }, { "id": 2, "text": "cheese" }, { "id": 3, "text": "potatoes" }];
+
 var List = React.createClass({
-    displayName: 'List',
+  displayName: 'List',
 
-    render: function () {
-        var listItems = ingredients.map(function (item) {
-            return React.createElement(ListItem, { key: item.id, ingredient: item.text });
-        });
-        return React.createElement(
-            'ul',
-            null,
-            listItems
-        );
-    }
+  render: function () {
+    var listItems = ingredients.map(function (item) {
+      return React.createElement(ListItem, { key: item.id, ingredient: item.text });
+    });
 
+    return React.createElement(
+      'ul',
+      null,
+      listItems
+    );
+  }
 });
 
 module.exports = List;
 
 },{"./ListItem.jsx":173,"react":170}],173:[function(require,module,exports){
 var React = require('react');
-var ListItem = React.creatClass({
+var ListItem = React.createClass({
+  displayName: 'ListItem',
 
-    render: function () {
-
-        return React.createElement(
-            'li',
-            null,
-            React.createElement(
-                'h4',
-                null,
-                this.props.ingredient
-            )
-        );
-    }
-
+  render: function () {
+    return React.createElement(
+      'li',
+      null,
+      React.createElement(
+        'h4',
+        null,
+        this.props.ingredient
+      )
+    );
+  }
 });
 
 module.exports = ListItem;
@@ -20804,10 +20804,6 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var List = require('./components/List.jsx');
 
-ReactDOM.render(React.createElement(
-  List,
-  null,
-  ',document.getElementById(\'ingredients\'))'
-));
+ReactDOM.render(React.createElement(List, null), document.getElementById('ingredients'));
 
 },{"./components/List.jsx":172,"react":170,"react-dom":1}]},{},[174]);
